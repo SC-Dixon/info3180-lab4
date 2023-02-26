@@ -4,18 +4,13 @@
 <h1 class="page-header">View Images</h1>
 
 {% include 'flash_messages.html' %}
-
-
-
-    
-    <div class="photodiv">
-        <ul>
-            {% for photo in photolist %}
-            <li>
-                <img src="{{ url_for('get_image', filename=photo) }}"/>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
+   
+<div class="photodiv">
+    {% for photo in photolist %}
+        <div class="photoimgs">
+            <img class="photoimg" src="{{ url_for('get_image', filename=photo) }}"/>
+        </div>
+    {% endfor %}
+</div>
 
 {% endblock %}
